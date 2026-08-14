@@ -380,7 +380,6 @@ function detectOverlaps() {
 
     const overlaps = [];
 
-
     for (
         let i = 0;
         i < subscriptions.length;
@@ -403,10 +402,8 @@ function detectOverlaps() {
             // Only compare active subscriptions
 
             if (
-                first.status !==
-                "active" ||
-                second.status !==
-                "active"
+                first.status !== "active" ||
+                second.status !== "active"
             ) {
 
                 continue;
@@ -419,14 +416,16 @@ function detectOverlaps() {
             const reasons = [];
 
 
+            // ==================================
             // SAME CATEGORY
+            // ==================================
 
             if (
                 first.category ===
                 second.category
             ) {
 
-                score += 40;
+                score += 35;
 
                 reasons.push(
                     "Same category"
@@ -435,7 +434,9 @@ function detectOverlaps() {
             }
 
 
+            // ==================================
             // SERVICE NAME SIMILARITY
+            // ==================================
 
             const firstName =
                 first.name
@@ -449,15 +450,11 @@ function detectOverlaps() {
 
 
             if (
-                firstName.includes(
-                    secondName
-                ) ||
-                secondName.includes(
-                    firstName
-                )
+                firstName.includes(secondName) ||
+                secondName.includes(firstName)
             ) {
 
-                score += 40;
+                score += 30;
 
                 reasons.push(
                     "Similar service names"
@@ -466,16 +463,65 @@ function detectOverlaps() {
             }
 
 
-            // BOTH ACTIVE
+            // ==================================
+            // MONTHLY COST SIMILARITY
+            // ==================================
 
-            score += 20;
+            const firstMonthlyCost =
+                normalizeMonthlyCost(
+                    Number(first.amount),
+                    first.billingCycle
+                );
+
+            const secondMonthlyCost =
+                normalizeMonthlyCost(
+                    Number(second.amount),
+                    second.billingCycle
+                );
+
+
+            const largerCost =
+                Math.max(
+                    firstMonthlyCost,
+                    secondMonthlyCost
+                );
+
+            const costDifference =
+                Math.abs(
+                    firstMonthlyCost -
+                    secondMonthlyCost
+                );
+
+
+            if (
+                largerCost > 0 &&
+                costDifference <=
+                    largerCost * 0.20
+            ) {
+
+                score += 20;
+
+                reasons.push(
+                    "Similar monthly cost"
+                );
+
+            }
+
+
+            // ==================================
+            // BOTH ACTIVE
+            // ==================================
+
+            score += 15;
 
             reasons.push(
                 "Both subscriptions are active"
             );
 
 
+            // ==================================
             // OVERLAP THRESHOLD
+            // ==================================
 
             if (score >= 60) {
 
