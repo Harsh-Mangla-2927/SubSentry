@@ -2,86 +2,91 @@
 
 ### Subscription Intelligence & Recurring Spend Audit Platform
 
-SubSentry is a subscription management and spending-audit application designed to help users understand their recurring expenses, normalize different billing cycles, and identify potential subscription overlaps.
+SubSentry is a subscription management and spending-intelligence platform designed to help users understand recurring expenses, normalize different billing cycles, identify potential subscription overlaps, and evaluate how recurring spending affects their monthly budget.
 
-The project is being developed incrementally, starting with a Vanilla JavaScript frontend and progressing toward a full MERN-stack application.
-
----
-
-## Problem
-
-Subscription-based services are often billed using different cycles such as weekly, monthly, and yearly plans. This makes it difficult to understand the actual recurring monthly cost.
-
-Users may also maintain multiple subscriptions within the same category, leading to potential spending overlap and unnecessary recurring expenses.
-
-SubSentry addresses this by providing a centralized subscription ledger with normalized spending analytics and overlap detection.
+The project is being developed incrementally, starting with a Vanilla JavaScript frontend and progressively moving toward a full MERN-stack application.
 
 ---
 
-## Current Features
+## Overview
 
-### Subscription Management
-- Add subscriptions
-- Store service name, amount, billing cycle, category, and start date
-- Edit existing subscriptions
-- Delete subscriptions
+Managing multiple subscription services can make recurring spending difficult to understand.
+
+Different services may use:
+
+- Weekly billing
+- Monthly billing
+- Yearly billing
+
+At the same time, users may maintain multiple services serving similar purposes, creating potential redundant spending.
+
+SubSentry provides a centralized platform where users can track subscriptions, analyze recurring costs, identify potential overlaps, and understand their overall subscription health.
+
+---
+
+## Problem Statement
+
+Subscription expenses are often distributed across multiple services and billing cycles.
+
+This creates several common problems:
+
+- Difficulty estimating true monthly subscription spending
+- Lack of visibility into total recurring expenses
+- Multiple subscriptions serving similar purposes
+- Difficulty comparing weekly, monthly, and yearly plans
+- Limited awareness of how subscriptions affect available income
+- No centralized subscription ledger
+
+SubSentry addresses these problems through normalized spending analysis and subscription intelligence.
+
+---
+
+# Current Features
+
+## 1. User Authentication
+
+SubSentry currently provides a frontend authentication flow including:
+
+- User registration
+- User login
+- Logout
+- Session persistence
+- Basic authentication validation
+- Returning users can log back into their accounts
+
+User account information is currently persisted using browser `LocalStorage`.
+
+> Note: This is a frontend prototype authentication system. Production authentication will be migrated to a secure backend implementation during the MERN phase.
+
+---
+
+## 2. Subscription Management
+
+Users can maintain a personal subscription ledger.
+
+Each subscription contains:
+
+- Service name
+- Amount
+- Billing cycle
+- Category
+- Start date
+
+Supported operations include:
+
+- Add subscription
+- Edit subscription
+- Delete subscription
 - Search subscriptions
 - Filter subscriptions by category
 
-### Billing-Cycle Normalization
-SubSentry converts different billing cycles into a common monthly spending value.
-
-Examples:
-
-- Weekly → `(amount × 52) / 12`
-- Monthly → `amount`
-- Yearly → `amount / 12`
-
-This allows subscriptions with different billing periods to be compared using a common monthly burn rate.
-
-### Spending Dashboard
-The dashboard currently provides:
-
-- Total Monthly Burn
-- Active Subscription Count
-- Highest Spending Category
-- Potential Overlap Count
-- Category-wise spending breakdown
-
-### Overlap Detection
-SubSentry analyzes subscriptions belonging to the same category and identifies potential redundancies between active services.
-
 ---
 
-## Technology Stack
+## 3. Billing-Cycle Normalization
 
-### Current
-- HTML5
-- CSS3
-- JavaScript (ES6+)
-- Browser LocalStorage
+SubSentry converts different billing cycles into a comparable monthly spending value.
 
-### Planned
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- React
-- Tailwind CSS
-- REST APIs
-- Authentication
-- JWT
-
----
-
-## Project Architecture
-
-### Current Frontend
+### Weekly
 
 ```text
-SubSentry/
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+Monthly Cost = (Amount × 52) / 12
