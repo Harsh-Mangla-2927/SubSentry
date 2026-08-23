@@ -3,943 +3,1259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SubSentry - Subscription Intelligence</title>
+<meta name="description" content="SubSentry - Subscription Intelligence and Recurring Spend Audit Platform">
+<title>SubSentry — Subscription Intelligence</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- LANDING -->
-<div id="landingView" class="page-view">
+<div id="toastContainer" class="toast-container"></div>
+
+<!-- =========================
+     LANDING PAGE
+========================= -->
+
+<section id="landingView" class="page-view">
 
 <header class="main-navbar">
-  <button id="brandHome" class="brand brand-button" type="button">
-    <span class="brand-mark">S</span>
-    <span>SubSentry</span>
-  </button>
+<button id="brandHome" class="brand brand-button" type="button">
+<span class="brand-mark">S</span>
+<span>SubSentry</span>
+</button>
 
-  <nav class="main-nav">
-    <a href="#features">Features</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#insights">Insights</a>
-  </nav>
+<nav class="main-nav">
+<button id="navFeaturesButton" class="nav-link" type="button">Features</button>
+<button id="navHowItWorksButton" class="nav-link" type="button">How It Works</button>
+<button id="navInsightsButton" class="nav-link" type="button">Insights</button>
+</nav>
 
-  <div class="nav-actions">
-    <button id="navLoginButton" class="nav-login" type="button">Log In</button>
-    <button id="navRegisterButton" class="nav-primary" type="button">Get Started</button>
-  </div>
+<div class="nav-actions">
+<button id="themeToggle" class="theme-toggle" type="button">
+<span id="themeIcon" class="theme-icon">☀</span>
+<span id="themeLabel" class="theme-label">Light</span>
+</button>
+
+<button id="navLoginButton" class="nav-login" type="button">
+Log in
+</button>
+
+<button id="navRegisterButton" class="nav-primary" type="button">
+Get Started
+</button>
+</div>
 </header>
+
 
 <main>
 
 <section class="hero-section">
 
-  <div class="hero-content">
-    <p class="eyebrow">SUBSCRIPTION INTELLIGENCE</p>
+<div class="hero-content reveal">
+<p class="eyebrow">SUBSCRIPTION INTELLIGENCE</p>
 
-    <h1>Stop the subscription leak before it becomes a habit.</h1>
+<h1>
+Know where your recurring money goes.
+</h1>
 
-    <p class="hero-description">
-      SubSentry helps you track recurring subscriptions, normalize billing
-      cycles, detect overlapping services, and understand exactly how
-      subscriptions affect your monthly finances.
-    </p>
+<p class="hero-description">
+SubSentry brings your subscriptions into one intelligent workspace,
+normalizes different billing cycles and helps you identify potential
+overlap before recurring spending gets out of control.
+</p>
 
-    <div class="hero-actions">
-      <button id="heroGetStarted" class="hero-primary" type="button">
-        Get Started <span>→</span>
-      </button>
+<div class="hero-actions">
+<button id="heroGetStarted" class="hero-primary" type="button">
+Get Started
+<span>→</span>
+</button>
 
-      <button id="heroExplore" class="hero-secondary" type="button">
-        Explore Features
-      </button>
-    </div>
+<button id="heroHowItWorks" class="hero-secondary" type="button">
+See How It Works
+</button>
+</div>
 
-    <div class="hero-points">
-      <span>✓ Personal subscription tracking</span>
-      <span>✓ Smart spending analysis</span>
-      <span>✓ Budget intelligence</span>
-    </div>
-  </div>
+<div class="hero-points">
+<span>✓ Centralized subscription ledger</span>
+<span>✓ Monthly spending normalization</span>
+<span>✓ Potential overlap detection</span>
+</div>
+</div>
 
-  <div class="hero-dashboard-preview">
-    <div class="preview-window">
 
-      <div class="preview-topbar">
-        <div class="preview-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+<div class="hero-visual reveal delay-2">
 
-        <strong>SubSentry Dashboard</strong>
+<div class="visual-glow"></div>
 
-        <span class="preview-status">Healthy</span>
-      </div>
+<div class="dashboard-visual">
 
-      <div class="preview-content">
+<div class="visual-topbar">
+<div class="visual-dots">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-        <p class="preview-eyebrow">MONTHLY OVERVIEW</p>
+<span>SubSentry Dashboard</span>
 
-        <h3>Your subscription health</h3>
+<span class="visual-health">● Healthy</span>
+</div>
 
-        <div class="preview-stats">
+<div class="visual-body">
 
-          <div class="preview-stat">
-            <span>Monthly Burn</span>
-            <strong>₹1,548</strong>
-            <small>Normalized spend</small>
-          </div>
+<div class="visual-heading">
+<div>
+<p>MONTHLY OVERVIEW</p>
+<h3>Recurring Spend</h3>
+</div>
 
-          <div class="preview-stat">
-            <span>Active Subs</span>
-            <strong>6</strong>
-            <small>Currently tracked</small>
-          </div>
+<div class="visual-avatar">S</div>
+</div>
 
-          <div class="preview-stat danger-preview">
-            <span>Potential Overlaps</span>
-            <strong>2</strong>
-            <small>Need attention</small>
-          </div>
 
-        </div>
+<div class="visual-stat-grid">
 
-        <div class="preview-bottom">
+<div class="visual-stat">
+<span>Monthly Burn</span>
+<strong>₹4,280</strong>
+<small>Across 8 subscriptions</small>
+</div>
 
-          <div class="preview-category">
+<div class="visual-stat">
+<span>Active Services</span>
+<strong>8</strong>
+<small>4 categories</small>
+</div>
 
-            <p>SPENDING BY CATEGORY</p>
+<div class="visual-stat visual-danger">
+<span>Potential Overlap</span>
+<strong>2</strong>
+<small>Needs review</small>
+</div>
 
-            <div class="preview-bar">
-              <span>Entertainment</span>
-              <div><i style="width:82%"></i></div>
-              <strong>₹899</strong>
-            </div>
+</div>
 
-            <div class="preview-bar">
-              <span>Music</span>
-              <div><i style="width:58%"></i></div>
-              <strong>₹399</strong>
-            </div>
 
-            <div class="preview-bar">
-              <span>Productivity</span>
-              <div><i style="width:36%"></i></div>
-              <strong>₹250</strong>
-            </div>
+<div class="visual-chart-card">
 
-          </div>
+<div class="chart-title">
+<span>Category Spending</span>
+<span>Monthly</span>
+</div>
 
-          <div class="preview-alert">
-            <span>⚠</span>
+<div class="chart-row">
+<span>Entertainment</span>
+<div class="chart-track">
+<i style="width:82%"></i>
+</div>
+<strong>₹1,750</strong>
+</div>
 
-            <div>
-              <strong>Overlap detected</strong>
-              <p>Review subscriptions with similar categories.</p>
-            </div>
-          </div>
+<div class="chart-row">
+<span>Software</span>
+<div class="chart-track">
+<i style="width:65%"></i>
+</div>
+<strong>₹1,280</strong>
+</div>
 
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="chart-row">
+<span>Education</span>
+<div class="chart-track">
+<i style="width:48%"></i>
+</div>
+<strong>₹720</strong>
+</div>
+
+<div class="chart-row">
+<span>Other</span>
+<div class="chart-track">
+<i style="width:30%"></i>
+</div>
+<strong>₹530</strong>
+</div>
+
+</div>
+
+
+<div class="visual-bottom">
+
+<div class="visual-mini-card">
+<div class="mini-icon">✓</div>
+<div>
+<strong>Normalized</strong>
+<p>Billing cycles compared</p>
+</div>
+</div>
+
+<div class="visual-mini-card warning-mini">
+<div class="mini-icon">!</div>
+<div>
+<strong>Review Needed</strong>
+<p>2 possible overlaps</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 
 </section>
+
+
+<section class="trust-strip">
+<div>
+<strong>Weekly → Monthly</strong>
+<span>Normalized billing</span>
+</div>
+
+<div>
+<strong>All subscriptions</strong>
+<span>One central ledger</span>
+</div>
+
+<div>
+<strong>Category analysis</strong>
+<span>Understand your burn</span>
+</div>
+
+<div>
+<strong>Overlap detection</strong>
+<span>Find potential waste</span>
+</div>
+</section>
+
 
 <section id="features" class="landing-section">
 
-  <div class="section-heading">
-    <p class="eyebrow">CORE CAPABILITIES</p>
+<div class="section-heading">
+<p class="eyebrow">CORE FEATURES</p>
+<h2>Everything you need to understand recurring spending.</h2>
+<p>
+SubSentry turns scattered recurring payments into clear,
+actionable financial information.
+</p>
+</div>
 
-    <h2>Everything you need to understand recurring spending.</h2>
 
-    <p>
-      SubSentry turns scattered recurring charges into a clear financial picture.
-    </p>
-  </div>
+<div class="feature-grid">
 
-  <div class="feature-grid">
+<div class="feature-card reveal">
+<div class="feature-icon">₹</div>
+<h3>Monthly Burn</h3>
+<p>
+Convert weekly, monthly and yearly subscriptions into a common
+monthly spending figure.
+</p>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">↻</div>
-      <h3>Billing Normalization</h3>
-      <p>
-        Convert weekly, monthly and yearly subscriptions into one comparable
-        monthly burn rate.
-      </p>
-    </div>
+<div class="feature-card reveal delay-1">
+<div class="feature-icon">▣</div>
+<h3>Subscription Ledger</h3>
+<p>
+Keep your active recurring services organized with amount,
+category, billing cycle and start date.
+</p>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">⌁</div>
-      <h3>Overlap Detection</h3>
-      <p>
-        Identify subscriptions that belong to similar categories and may
-        represent redundant spending.
-      </p>
-    </div>
+<div class="feature-card reveal delay-2">
+<div class="feature-icon">↔</div>
+<h3>Overlap Detection</h3>
+<p>
+Identify subscriptions in the same category that may represent
+unnecessary or redundant spending.
+</p>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">₹</div>
-      <h3>Smart Budgeting</h3>
-      <p>
-        See how recurring subscriptions affect your available income and
-        savings rate.
-      </p>
-    </div>
+<div class="feature-card reveal delay-3">
+<div class="feature-icon">◔</div>
+<h3>Spending Insights</h3>
+<p>
+See category concentration, annualized spending and the impact
+subscriptions have on your monthly budget.
+</p>
+</div>
 
-    <div class="feature-card">
-      <div class="feature-icon">◈</div>
-      <h3>Spending Insights</h3>
-      <p>
-        Turn your subscription data into simple financial insights and
-        annual projections.
-      </p>
-    </div>
+</div>
 
-  </div>
 </section>
+
 
 <section id="how-it-works" class="process-section">
 
-  <div class="section-heading">
-    <p class="eyebrow">HOW IT WORKS</p>
+<div class="section-heading">
+<p class="eyebrow">HOW IT WORKS</p>
+<h2>From recurring charges to useful intelligence.</h2>
+<p>
+A simple workflow designed around the way subscription spending
+actually happens.
+</p>
+</div>
 
-    <h2>From recurring charges to financial clarity.</h2>
-  </div>
 
-  <div class="process-grid">
+<div class="process-grid">
 
-    <div class="process-step">
-      <span>01</span>
-      <h3>Add</h3>
-      <p>
-        Enter your subscriptions, billing cycles and categories.
-      </p>
-    </div>
+<div class="process-step reveal">
+<span>01</span>
+<div class="process-icon">+</div>
+<h3>Add</h3>
+<p>
+Enter the services you currently pay for, including their amount,
+billing cycle and category.
+</p>
+</div>
 
-    <div class="process-step">
-      <span>02</span>
-      <h3>Analyze</h3>
-      <p>
-        SubSentry normalizes your recurring costs and finds potential overlaps.
-      </p>
-    </div>
+<div class="process-step reveal delay-1">
+<span>02</span>
+<div class="process-icon">↕</div>
+<h3>Normalize</h3>
+<p>
+SubSentry converts different billing periods into a comparable
+monthly spending value.
+</p>
+</div>
 
-    <div class="process-step">
-      <span>03</span>
-      <h3>Optimize</h3>
-      <p>
-        Use budget calculations and insights to understand where your money goes.
-      </p>
-    </div>
+<div class="process-step reveal delay-2">
+<span>03</span>
+<div class="process-icon">✓</div>
+<h3>Understand</h3>
+<p>
+Review spending categories, potential overlaps and budget impact
+from one dashboard.
+</p>
+</div>
 
-  </div>
+</div>
 
 </section>
 
-<section id="insights" class="insight-banner">
 
-  <div>
-    <p class="eyebrow">BUILT FOR FINANCIAL AWARENESS</p>
+<section id="insights" class="intelligence-section">
 
-    <h2>
-      Your subscriptions should work for you, not against you.
-    </h2>
-  </div>
+<div class="intelligence-content">
 
-  <button id="insightGetStarted" class="hero-primary" type="button">
-    Start Tracking →
-  </button>
+<p class="eyebrow">SPENDING INTELLIGENCE</p>
+
+<h2>
+Your subscriptions should tell you more than just what they cost.
+</h2>
+
+<p>
+SubSentry turns individual recurring payments into a bigger picture:
+monthly burn, annualized cost, category concentration, possible
+overlaps and budget pressure.
+</p>
+
+
+<div class="intelligence-points">
+
+<div>
+<span>✓</span>
+<div>
+<strong>Compare unlike billing cycles</strong>
+<p>Weekly and yearly plans can be understood on the same monthly scale.</p>
+</div>
+</div>
+
+<div>
+<span>✓</span>
+<div>
+<strong>See category concentration</strong>
+<p>Understand which areas consume the largest share of recurring spend.</p>
+</div>
+</div>
+
+<div>
+<span>✓</span>
+<div>
+<strong>Spot possible redundancies</strong>
+<p>Review multiple active services that may serve similar purposes.</p>
+</div>
+</div>
+
+<div>
+<span>✓</span>
+<div>
+<strong>Connect subscriptions to your budget</strong>
+<p>See how recurring expenses affect your available monthly amount.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="intelligence-card reveal">
+
+<div class="intelligence-card-top">
+<span>SUBSENTRY ANALYSIS</span>
+<span class="live-dot">● LIVE</span>
+</div>
+
+<div class="intelligence-number">
+₹4,280
+<span>/ month</span>
+</div>
+
+<p>Normalized recurring spend</p>
+
+<div class="intelligence-progress">
+
+<div>
+<span>Subscription load</span>
+<span>21.4%</span>
+</div>
+
+<div class="progress-track">
+<i style="width:21.4%"></i>
+</div>
+
+</div>
+
+
+<div class="intelligence-badges">
+<span>8 Active</span>
+<span>4 Categories</span>
+<span>2 Review</span>
+<span>₹51,360 / year</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="cta-section">
+
+<div>
+<p class="eyebrow">START WITH CLARITY</p>
+<h2>Build a clearer picture of your recurring spending.</h2>
+<p>
+Create your SubSentry workspace and start auditing your subscriptions.
+</p>
+</div>
+
+<button id="insightGetStarted" class="hero-primary" type="button">
+Start Tracking
+<span>→</span>
+</button>
 
 </section>
 
 </main>
 
+
 <footer class="landing-footer">
-  <p>SubSentry • Subscription Intelligence Platform</p>
+© 2026 SubSentry · Subscription Intelligence & Recurring Spend Audit Platform
 </footer>
 
-</div>
+</section>
 
 
-<!-- AUTH -->
-<div id="authView" class="page-view hidden">
+<!-- =========================
+     AUTHENTICATION
+========================= -->
+
+<section id="authView" class="page-view hidden">
 
 <div class="auth-shell">
 
-  <button id="authBrandHome" class="auth-brand brand-button" type="button">
-    <span class="brand-mark">S</span>
-    <span>SubSentry</span>
-  </button>
+<button id="authBrandHome" class="auth-brand" type="button">
+<span class="brand-mark">S</span>
+<span class="auth-brand-name">SubSentry</span>
+</button>
 
-  <div class="auth-card">
 
-    <div id="authVisual" class="auth-visual">
+<div class="auth-card">
 
-      <div class="auth-visual-content">
+<div class="auth-visual">
 
-        <div class="auth-mini-logo">S</div>
+<div class="auth-decoration decoration-one"></div>
+<div class="auth-decoration decoration-two"></div>
+<div class="auth-decoration decoration-three"></div>
 
-        <p id="authVisualEyebrow" class="eyebrow">
-          SUBSCRIPTION INTELLIGENCE
-        </p>
+<div class="auth-visual-content">
 
-        <h1 id="authVisualTitle">
-          Take control of recurring spending.
-        </h1>
+<div class="auth-mini-logo">S</div>
 
-        <p id="authVisualText">
-          See every recurring charge, identify unnecessary overlaps and
-          understand your monthly subscription burn.
-        </p>
+<p id="authVisualEyebrow" class="eyebrow">
+SUBSCRIPTION INTELLIGENCE
+</p>
 
-        <div id="loginVisualPoints" class="auth-points">
-          <div>✓ Track every recurring service</div>
-          <div>✓ Normalize billing cycles</div>
-          <div>✓ Detect spending overlaps</div>
-        </div>
+<h1 id="authVisualTitle">
+Take control of recurring spending.
+</h1>
 
-        <div id="registerVisualPoints" class="auth-points hidden">
-          <div>✓ Build your personal subscription ledger</div>
-          <div>✓ Get smarter spending insights</div>
-          <div>✓ Start with your own private workspace</div>
-        </div>
+<p id="authVisualText">
+See every recurring charge, identify unnecessary overlaps and
+understand your monthly subscription burn.
+</p>
 
-      </div>
 
-      <div class="auth-decoration decoration-one"></div>
-      <div class="auth-decoration decoration-two"></div>
-      <div class="auth-decoration decoration-three"></div>
+<div id="loginVisualPoints" class="auth-points">
 
-    </div>
+<div>✓ Centralized subscription tracking</div>
+<div>✓ Billing-cycle normalization</div>
+<div>✓ Category spending analysis</div>
+<div>✓ Potential overlap detection</div>
 
-    <div class="auth-form-area">
+</div>
 
-      <button id="backHomeButton" class="back-home" type="button">
-        ← Back to Home
-      </button>
 
-      <!-- LOGIN -->
+<div id="registerVisualPoints" class="auth-points hidden">
 
-      <div id="loginPanel" class="auth-panel">
+<div>✓ Build your personal subscription ledger</div>
+<div>✓ Understand your true monthly burn</div>
+<div>✓ Identify potential recurring waste</div>
+<div>✓ Track your spending in one workspace</div>
 
-        <p class="eyebrow">WELCOME BACK</p>
+</div>
 
-        <h2>Login to SubSentry</h2>
+</div>
+</div>
 
-        <p class="auth-subtitle">
-          Manage your subscriptions and understand your spending.
-        </p>
 
-        <form id="loginForm">
+<div class="auth-form-area">
 
-          <div class="form-group">
+<button id="backHomeButton" class="back-home" type="button">
+← Back to Home
+</button>
 
-            <label for="loginEmail">Email</label>
 
-            <input
-              type="email"
-              id="loginEmail"
-              placeholder="you@example.com"
-              autocomplete="email"
-              required
-            >
+<!-- LOGIN -->
 
-            <small id="loginEmailError" class="error-message"></small>
+<div id="loginPanel" class="auth-panel">
 
-          </div>
+<h2>Welcome back</h2>
 
-          <div class="form-group">
+<p class="auth-subtitle">
+Sign in to continue to your SubSentry workspace.
+</p>
 
-            <label for="loginPassword">Password</label>
 
-            <input
-              type="password"
-              id="loginPassword"
-              placeholder="Enter your password"
-              autocomplete="current-password"
-              required
-            >
+<form id="loginForm" novalidate>
 
-            <small id="loginPasswordError" class="error-message"></small>
+<div class="form-group">
 
-          </div>
+<label for="loginEmail">Email address</label>
 
-          <div id="loginMessage" class="auth-message"></div>
+<input
+type="email"
+id="loginEmail"
+placeholder="you@example.com"
+autocomplete="email"
+>
 
-          <button type="submit" class="auth-button">
-            Login
-          </button>
+<span id="loginEmailError" class="error-message"></span>
 
-        </form>
+</div>
 
-        <p class="auth-switch">
-          Don't have an account?
-          <button id="showRegisterButton" type="button">
-            Create Account
-          </button>
-        </p>
 
-      </div>
+<div class="form-group">
 
+<label for="loginPassword">Password</label>
 
-      <!-- REGISTER -->
+<div class="password-field">
 
-      <div id="registerPanel" class="auth-panel hidden">
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter your password"
+autocomplete="current-password"
+>
 
-        <p class="eyebrow">GET STARTED</p>
+<button
+id="loginPasswordToggle"
+class="password-toggle"
+type="button"
+>
+Show
+</button>
 
-        <h2>Create your account</h2>
+</div>
 
-        <p class="auth-subtitle">
-          Create your personal subscription intelligence workspace.
-        </p>
+<span id="loginPasswordError" class="error-message"></span>
 
-        <form id="registerForm">
+</div>
 
-          <div class="auth-form-grid">
 
-            <div class="form-group">
+<div id="loginMessage" class="auth-message"></div>
 
-              <label for="registerName">Full Name</label>
 
-              <input
-                type="text"
-                id="registerName"
-                placeholder="Your name"
-                autocomplete="name"
-                required
-              >
+<button
+id="loginSubmitButton"
+class="auth-button"
+type="submit"
+>
+Log In
+</button>
 
-              <small id="registerNameError" class="error-message"></small>
+</form>
 
-            </div>
 
-            <div class="form-group">
+<div class="auth-switch">
+Don't have an account?
+<button id="showRegisterButton" type="button">
+Create one
+</button>
+</div>
 
-              <label for="registerEmail">Email</label>
+</div>
 
-              <input
-                type="email"
-                id="registerEmail"
-                placeholder="you@example.com"
-                autocomplete="email"
-                required
-              >
 
-              <small id="registerEmailError" class="error-message"></small>
+<!-- REGISTER -->
 
-            </div>
+<div id="registerPanel" class="auth-panel hidden">
 
-            <div class="form-group">
+<h2>Create your account</h2>
 
-              <label for="registerPassword">Password</label>
+<p class="auth-subtitle">
+Start building your personal subscription intelligence workspace.
+</p>
 
-              <input
-                type="password"
-                id="registerPassword"
-                placeholder="Minimum 6 characters"
-                autocomplete="new-password"
-                required
-              >
 
-              <small id="registerPasswordError" class="error-message"></small>
+<form id="registerForm" novalidate>
 
-            </div>
+<div class="auth-form-grid">
 
-            <div class="form-group">
+<div class="form-group">
 
-              <label for="confirmPassword">Confirm Password</label>
+<label for="registerName">Full name</label>
 
-              <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Re-enter your password"
-                autocomplete="new-password"
-                required
-              >
+<input
+type="text"
+id="registerName"
+placeholder="Your name"
+autocomplete="name"
+>
 
-              <small id="confirmPasswordError" class="error-message"></small>
+<span id="registerNameError" class="error-message"></span>
 
-            </div>
+</div>
 
-          </div>
 
-          <div id="registerMessage" class="auth-message"></div>
+<div class="form-group">
 
-          <button type="submit" class="auth-button">
-            Create Account
-          </button>
+<label for="registerEmail">Email address</label>
 
-        </form>
+<input
+type="email"
+id="registerEmail"
+placeholder="you@example.com"
+autocomplete="email"
+>
 
-        <p class="auth-switch">
-          Already have an account?
-          <button id="showLoginButton" type="button">
-            Login
-          </button>
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
+<span id="registerEmailError" class="error-message"></span>
 
 </div>
 
 </div>
 
 
-<!-- DASHBOARD -->
+<div class="form-group">
 
-<div id="dashboardView" class="page-view hidden">
+<label for="registerPassword">Password</label>
+
+<div class="password-field">
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Create a strong password"
+autocomplete="new-password"
+>
+
+<button
+id="registerPasswordToggle"
+class="password-toggle"
+type="button"
+>
+Show
+</button>
+
+</div>
+
+
+<div id="passwordStrength" class="password-strength">
+
+<div class="strength-top">
+<span>Password strength</span>
+<strong id="strengthLabel">Weak</strong>
+</div>
+
+<div class="strength-track">
+<i id="strengthBar"></i>
+</div>
+
+
+<div class="password-rules">
+
+<div id="ruleLength">
+<span>○</span> 8+ characters
+</div>
+
+<div id="ruleUpper">
+<span>○</span> Uppercase
+</div>
+
+<div id="ruleLower">
+<span>○</span> Lowercase
+</div>
+
+<div id="ruleNumber">
+<span>○</span> Number
+</div>
+
+<div id="ruleSpecial">
+<span>○</span> Special character
+</div>
+
+</div>
+
+</div>
+
+<span id="registerPasswordError" class="error-message"></span>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="confirmPassword">Confirm password</label>
+
+<div class="password-field">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Repeat your password"
+autocomplete="new-password"
+>
+
+<button
+id="confirmPasswordToggle"
+class="password-toggle"
+type="button"
+>
+Show
+</button>
+
+</div>
+
+<span id="confirmPasswordError" class="error-message"></span>
+
+</div>
+
+
+<div id="registerMessage" class="auth-message"></div>
+
+
+<button
+id="registerSubmitButton"
+class="auth-button"
+type="submit"
+>
+Create Account
+</button>
+
+</form>
+
+
+<div class="auth-switch">
+Already have an account?
+<button id="showLoginButton" type="button">
+Log in
+</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<section id="dashboardView" class="page-view hidden">
 
 <header class="dashboard-navbar">
 
-  <button
-    id="dashboardBrandHome"
-    class="brand brand-button"
-    type="button"
-  >
-    <span class="brand-mark">S</span>
-    <span>SubSentry</span>
-  </button>
+<button id="dashboardBrandHome" class="brand brand-button" type="button">
+<span class="brand-mark">S</span>
+<span>SubSentry</span>
+</button>
 
-  <div class="dashboard-user">
 
-    <span id="welcomeUser">Welcome</span>
+<div class="dashboard-user">
 
-    <button id="logoutButton" class="logout-button" type="button">
-      Logout
-    </button>
+<span id="welcomeUser">
+Welcome
+</span>
 
-  </div>
+<button id="dashboardThemeToggle" class="theme-toggle" type="button">
+<span id="dashboardThemeIcon" class="theme-icon">☀</span>
+<span id="dashboardThemeLabel" class="theme-label">Light</span>
+</button>
+
+<button id="logoutButton" class="logout-button" type="button">
+Log Out
+</button>
+
+</div>
 
 </header>
+
 
 <main class="dashboard-container">
 
 <section class="dashboard-hero">
 
-  <div>
+<p class="eyebrow">YOUR WORKSPACE</p>
 
-    <p class="eyebrow">PERSONAL FINANCE</p>
+<h1>
+Understand your recurring spending.
+</h1>
 
-    <h1>
-      Know where your subscriptions are leaking money.
-    </h1>
-
-    <p>
-      Track recurring subscriptions, normalize billing cycles, detect
-      potential overlaps and understand how subscriptions affect your
-      monthly budget.
-    </p>
-
-  </div>
+<p>
+Track subscriptions, normalize billing cycles and identify potential
+overlap from one centralized dashboard.
+</p>
 
 </section>
 
+
+<!-- SUMMARY -->
 
 <section class="summary-grid">
 
-  <div class="summary-card">
-    <p>Total Monthly Burn</p>
-    <h2 id="totalMonthlySpend">₹0.00</h2>
-    <span>Normalized monthly spending</span>
-  </div>
+<div class="summary-card">
+<p>Total Monthly Burn</p>
+<h2 id="totalMonthlySpend">₹0.00</h2>
+<span>Normalized recurring spend</span>
+</div>
 
-  <div class="summary-card">
-    <p>Active Subscriptions</p>
-    <h2 id="subscriptionCount">0</h2>
-    <span>Currently tracked</span>
-  </div>
 
-  <div class="summary-card">
-    <p>Top Category</p>
-    <h2 id="topCategory">—</h2>
-    <span>Highest monthly spending</span>
-  </div>
+<div class="summary-card">
+<p>Active Subscriptions</p>
+<h2 id="subscriptionCount">0</h2>
+<span>Currently tracked services</span>
+</div>
 
-  <div class="summary-card alert-card">
-    <p>Potential Overlaps</p>
-    <h2 id="overlapCount">0</h2>
-    <span>Categories requiring attention</span>
-  </div>
+
+<div class="summary-card">
+<p>Highest Spending Category</p>
+<h2 id="topCategory">—</h2>
+<span>Largest monthly category</span>
+</div>
+
+
+<div class="summary-card alert-card">
+<p>Potential Overlaps</p>
+<h2 id="overlapCount">0</h2>
+<span>Services worth reviewing</span>
+</div>
 
 </section>
 
+
+<!-- MAIN GRID -->
 
 <section class="content-grid">
 
-  <div class="panel form-panel">
+<!-- ADD SUBSCRIPTION -->
 
-    <div class="panel-heading">
+<div class="panel">
 
-      <div>
+<div class="panel-heading">
 
-        <p class="eyebrow">SUBSCRIPTION ENTRY</p>
+<div>
+<p class="eyebrow">SUBSCRIPTION LEDGER</p>
+<h2 id="subscriptionFormTitle">
+Add Subscription
+</h2>
+</div>
 
-        <h2 id="subscriptionFormTitle">
-          Add Subscription
-        </h2>
-
-      </div>
-
-    </div>
-
-    <form id="subscriptionForm">
-
-      <div class="form-group">
-
-        <label for="subscriptionName">
-          Service Name
-        </label>
-
-        <input
-          type="text"
-          id="subscriptionName"
-          placeholder="e.g. Netflix"
-        >
-
-        <small id="nameError" class="error-message"></small>
-
-      </div>
+</div>
 
 
-      <div class="form-row">
+<form id="subscriptionForm" novalidate>
 
-        <div class="form-group">
+<div class="form-group">
 
-          <label for="amount">Amount</label>
+<label for="subscriptionName">
+Service Name
+</label>
 
-          <input
-            type="number"
-            id="amount"
-            placeholder="e.g. 649"
-            min="0"
-            step="0.01"
-          >
+<input
+type="text"
+id="subscriptionName"
+placeholder="e.g. Netflix"
+>
 
-          <small id="amountError" class="error-message"></small>
+<span id="nameError" class="error-message"></span>
 
-        </div>
-
-        <div class="form-group">
-
-          <label for="billingCycle">
-            Billing Cycle
-          </label>
-
-          <select id="billingCycle">
-            <option value="monthly">Monthly</option>
-            <option value="weekly">Weekly</option>
-            <option value="yearly">Yearly</option>
-          </select>
-
-        </div>
-
-      </div>
+</div>
 
 
-      <div class="form-row">
+<div class="form-row">
 
-        <div class="form-group">
+<div class="form-group">
 
-          <label for="category">
-            Category
-          </label>
+<label for="amount">
+Amount
+</label>
 
-          <select id="category">
-            <option>Entertainment</option>
-            <option>Music</option>
-            <option>Productivity</option>
-            <option>Education</option>
-            <option>Cloud</option>
-            <option>Fitness</option>
-            <option>News</option>
-            <option>Other</option>
-          </select>
+<input
+type="number"
+id="amount"
+min="0"
+step="0.01"
+placeholder="0.00"
+>
 
-        </div>
+<span id="amountError" class="error-message"></span>
 
-        <div class="form-group">
-
-          <label for="startDate">
-            Start Date
-          </label>
-
-          <input type="date" id="startDate">
-
-          <small id="dateError" class="error-message"></small>
-
-        </div>
-
-      </div>
-
-      <button
-        type="submit"
-        id="subscriptionSubmitButton"
-        class="primary-button"
-      >
-        + Add Subscription
-      </button>
-
-      <button
-        type="button"
-        id="cancelEditButton"
-        class="cancel-button hidden"
-      >
-        Cancel Edit
-      </button>
-
-    </form>
-
-  </div>
+</div>
 
 
-  <div class="panel analytics-panel">
+<div class="form-group">
 
-    <div class="panel-heading">
+<label for="billingCycle">
+Billing Cycle
+</label>
 
-      <div>
+<select id="billingCycle">
 
-        <p class="eyebrow">SPENDING ANALYSIS</p>
+<option value="weekly">Weekly</option>
+<option value="monthly" selected>Monthly</option>
+<option value="yearly">Yearly</option>
 
-        <h2>Category Breakdown</h2>
+</select>
 
-      </div>
+</div>
 
-    </div>
-
-    <div id="categoryBreakdown" class="category-breakdown">
-
-      <div class="empty-state">
-        <span>📊</span>
-        <p>Add subscriptions to see your spending analysis.</p>
-      </div>
-
-    </div>
+</div>
 
 
-    <div class="overlap-section">
+<div class="form-row">
 
-      <div class="overlap-heading">
+<div class="form-group">
 
-        <p class="eyebrow">
-          OVERLAP INTELLIGENCE
-        </p>
+<label for="category">
+Category
+</label>
 
-        <h3>Potential Redundancies</h3>
+<select id="category">
 
-      </div>
+<option value="Entertainment">Entertainment</option>
+<option value="Software">Software</option>
+<option value="Education">Education</option>
+<option value="Health">Health</option>
+<option value="Shopping">Shopping</option>
+<option value="Finance">Finance</option>
+<option value="Utilities">Utilities</option>
+<option value="Other">Other</option>
 
-      <div id="overlapList" class="overlap-list">
+</select>
 
-        <div class="empty-state">
-          <span>✓</span>
-          <p>No potential overlaps detected.</p>
-        </div>
+</div>
 
-      </div>
 
-    </div>
+<div class="form-group">
 
-  </div>
+<label for="startDate">
+Start Date
+</label>
+
+<input
+type="date"
+id="startDate"
+>
+
+<span id="dateError" class="error-message"></span>
+
+</div>
+
+</div>
+
+
+<button
+id="subscriptionSubmitButton"
+class="primary-button"
+type="submit"
+>
++ Add Subscription
+</button>
+
+
+<button
+id="cancelEditButton"
+class="cancel-button hidden"
+type="button"
+>
+Cancel Edit
+</button>
+
+</form>
+
+</div>
+
+
+<!-- CATEGORY BREAKDOWN -->
+
+<div class="panel">
+
+<div class="panel-heading">
+
+<div>
+<p class="eyebrow">SPENDING ANALYSIS</p>
+<h2>Category Breakdown</h2>
+</div>
+
+</div>
+
+<div id="categoryBreakdown" class="category-breakdown">
+<div class="empty-state">
+<span>📊</span>
+<p>Add subscriptions to see your spending analysis.</p>
+</div>
+</div>
+
+
+<div class="overlap-section">
+
+<div class="overlap-heading">
+<h3>Potential Overlaps</h3>
+</div>
+
+<div id="overlapList" class="overlap-list">
+<div class="empty-state">
+<span>✓</span>
+<p>No potential overlaps detected.</p>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<section class="panel budget-panel">
-
-  <div class="panel-heading">
-
-    <div>
-
-      <p class="eyebrow">SMART BUDGET</p>
-
-      <h2>Budget Calculator</h2>
-
-      <p class="panel-description">
-        Enter your income and expenses to understand your monthly financial position.
-      </p>
-
-    </div>
-
-  </div>
-
-  <div class="budget-grid">
-
-    <div class="budget-inputs">
-
-      <div class="form-group">
-
-        <label for="monthlyIncome">
-          Monthly Income
-        </label>
-
-        <input
-          type="number"
-          id="monthlyIncome"
-          placeholder="e.g. 50000"
-          min="0"
-          step="0.01"
-        >
-
-        <small id="incomeError" class="error-message"></small>
-
-      </div>
-
-      <div class="form-group">
-
-        <label for="otherExpenses">
-          Other Monthly Expenses
-        </label>
-
-        <input
-          type="number"
-          id="otherExpenses"
-          placeholder="e.g. 18000"
-          min="0"
-          step="0.01"
-        >
-
-        <small id="expenseError" class="error-message"></small>
-
-      </div>
-
-      <button
-        id="calculateBudgetButton"
-        class="primary-button"
-        type="button"
-      >
-        Calculate Budget
-      </button>
-
-    </div>
-
-
-    <div class="budget-results">
-
-      <div class="budget-result-card">
-        <span>Subscription Burn</span>
-        <strong id="budgetSubscriptionSpend">₹0.00</strong>
-      </div>
-
-      <div class="budget-result-card">
-        <span>Total Expenses</span>
-        <strong id="budgetTotalExpenses">₹0.00</strong>
-      </div>
-
-      <div class="budget-result-card">
-        <span>Remaining Money</span>
-        <strong id="budgetRemaining">₹0.00</strong>
-      </div>
-
-      <div class="budget-result-card">
-        <span>Savings Rate</span>
-        <strong id="budgetSavingsRate">0%</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-  <div id="budgetInsight" class="budget-insight">
-    Enter your monthly income and expenses, then click Calculate Budget.
-  </div>
-
-</section>
-
-
-<section class="panel insights-panel">
-
-  <div class="panel-heading">
-
-    <div>
-
-      <p class="eyebrow">SMART INSIGHTS</p>
-
-      <h2>Spending Intelligence</h2>
-
-    </div>
-
-  </div>
-
-  <div id="smartInsights" class="insights-grid">
-
-    <div class="empty-state">
-      <span>💡</span>
-      <p>
-        Add subscriptions and budget information to receive insights.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
+<!-- SUBSCRIPTION LIST -->
 
 <section class="panel subscriptions-panel">
 
-  <div class="panel-heading subscriptions-heading">
+<div class="panel-heading subscriptions-heading">
 
-    <div>
-
-      <p class="eyebrow">YOUR SUBSCRIPTIONS</p>
-
-      <h2>Subscription Ledger</h2>
-
-    </div>
-
-    <div class="filter-controls">
-
-      <input
-        type="search"
-        id="searchInput"
-        placeholder="Search subscriptions..."
-      >
-
-      <select id="categoryFilter">
-
-        <option value="all">All Categories</option>
-        <option>Entertainment</option>
-        <option>Music</option>
-        <option>Productivity</option>
-        <option>Education</option>
-        <option>Cloud</option>
-        <option>Fitness</option>
-        <option>News</option>
-        <option>Other</option>
-
-      </select>
-
-    </div>
-
-  </div>
+<div>
+<p class="eyebrow">ACTIVE LEDGER</p>
+<h2>Your Subscriptions</h2>
+</div>
 
 
-  <div id="subscriptionList" class="subscription-list">
+<div class="filter-controls">
 
-    <div class="empty-state">
-      <span>💳</span>
-      <h3>No subscriptions yet</h3>
-      <p>
-        Add your first subscription to start tracking your recurring spend.
-      </p>
-    </div>
+<input
+type="search"
+id="searchInput"
+placeholder="Search subscriptions..."
+>
 
-  </div>
+<select id="categoryFilter">
+
+<option value="all">All Categories</option>
+<option value="Entertainment">Entertainment</option>
+<option value="Software">Software</option>
+<option value="Education">Education</option>
+<option value="Health">Health</option>
+<option value="Shopping">Shopping</option>
+<option value="Finance">Finance</option>
+<option value="Utilities">Utilities</option>
+<option value="Other">Other</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div id="subscriptionList" class="subscription-list">
+
+<div class="empty-state">
+<span>💳</span>
+<h3>No subscriptions yet</h3>
+<p>
+Add your first subscription to start tracking your recurring spend.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BUDGET -->
+
+<section class="panel budget-panel">
+
+<div class="panel-heading">
+
+<div>
+<p class="eyebrow">BUDGET INTELLIGENCE</p>
+<h2>Monthly Budget</h2>
+</div>
+
+</div>
+
+
+<div class="budget-grid">
+
+<div>
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label for="monthlyIncome">
+Monthly Income
+</label>
+
+<input
+type="number"
+id="monthlyIncome"
+min="0"
+step="0.01"
+placeholder="0.00"
+>
+
+<span id="incomeError" class="error-message"></span>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="otherExpenses">
+Other Monthly Expenses
+</label>
+
+<input
+type="number"
+id="otherExpenses"
+min="0"
+step="0.01"
+placeholder="0.00"
+>
+
+<span id="expenseError" class="error-message"></span>
+
+</div>
+
+</div>
+
+
+<button
+id="calculateBudgetButton"
+class="primary-button"
+type="button"
+>
+Calculate Budget
+</button>
+
+</div>
+
+
+<div>
+
+<div class="budget-results">
+
+<div class="budget-result-card">
+<span>Subscription Spend</span>
+<strong id="budgetSubscriptionSpend">₹0.00</strong>
+</div>
+
+<div class="budget-result-card">
+<span>Total Expenses</span>
+<strong id="budgetTotalExpenses">₹0.00</strong>
+</div>
+
+<div class="budget-result-card">
+<span>Remaining</span>
+<strong id="budgetRemaining">₹0.00</strong>
+</div>
+
+<div class="budget-result-card">
+<span>Savings Rate</span>
+<strong id="budgetSavingsRate">0%</strong>
+</div>
+
+</div>
+
+
+<div id="budgetInsight" class="budget-insight">
+Enter your income and expenses to understand your monthly position.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SMART INSIGHTS -->
+
+<section class="panel insights-panel">
+
+<div class="panel-heading">
+
+<div>
+<p class="eyebrow">SMART INSIGHTS</p>
+<h2>What Your Spending Says</h2>
+</div>
+
+</div>
+
+
+<div id="smartInsights" class="insights-grid">
+
+<div class="insight-card">
+
+<div class="insight-icon">💡</div>
+
+<strong>Start Tracking</strong>
+
+<p>
+Add subscriptions to receive personalized spending insights.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 </main>
 
+
 <footer class="dashboard-footer">
-  <p>SubSentry • Subscription Intelligence Platform</p>
+SubSentry · Subscription Intelligence & Recurring Spend Audit Platform
 </footer>
 
-</div>
+</section>
+
 
 <script src="script.js"></script>
 
