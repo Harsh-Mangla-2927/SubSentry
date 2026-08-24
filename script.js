@@ -2932,6 +2932,17 @@ function renderDashboard() {
     loadBudget();
 
     renderSmartInsights();
+
+    /*
+     * Refresh Personalized Action Center
+     * whenever dashboard data changes.
+     */
+    if (
+        typeof window.refreshActionCenter ===
+        "function"
+    ) {
+        window.refreshActionCenter();
+    }
 }
 
 

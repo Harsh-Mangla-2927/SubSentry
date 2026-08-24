@@ -1446,6 +1446,216 @@ Add subscriptions to receive personalized spending insights.
 
 </section>
 
+<!-- =====================================================
+     PERSONALIZED ACTION CENTER
+===================================================== -->
+
+<section
+    id="actionCenterSection"
+    class="action-center-section"
+>
+
+    <div class="action-center-header">
+
+        <div>
+
+            <span class="section-eyebrow">
+                PERSONALIZED INTELLIGENCE
+            </span>
+
+            <h2>
+                Smart Actions
+            </h2>
+
+            <p>
+                Personalized recommendations based on your
+                current subscription spending.
+            </p>
+
+        </div>
+
+        <div class="action-center-badge">
+            <span class="action-center-badge-dot"></span>
+            Live Analysis
+        </div>
+
+    </div>
+
+
+    <div
+        id="actionCenterGrid"
+        class="action-center-grid"
+    >
+
+        <!-- JavaScript generates action cards here -->
+
+    </div>
+
+
+    <div
+        id="actionCenterEmpty"
+        class="action-center-empty"
+        style="display:none;"
+    >
+
+        <div class="action-empty-icon">
+            ✓
+        </div>
+
+        <h3>
+            Your subscriptions look healthy
+        </h3>
+
+        <p>
+            SubSentry currently has no high-priority
+            actions to recommend.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SIMULATION MODAL
+===================================================== -->
+
+<div
+    id="actionSimulationModal"
+    class="action-modal"
+    aria-hidden="true"
+>
+
+    <div
+        class="action-modal-overlay"
+        id="actionModalOverlay"
+    ></div>
+
+
+    <div
+        class="action-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="simulationTitle"
+    >
+
+        <button
+            id="closeActionModal"
+            class="action-modal-close"
+            type="button"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div class="action-modal-icon">
+            ◇
+        </div>
+
+
+        <span class="section-eyebrow">
+            WHAT-IF SIMULATION
+        </span>
+
+
+        <h2 id="simulationTitle">
+            Review Subscription
+        </h2>
+
+
+        <p id="simulationDescription">
+            See the financial impact before making a change.
+        </p>
+
+
+        <div
+            id="simulationSubscription"
+            class="simulation-subscription"
+        >
+        </div>
+
+
+        <div class="simulation-results">
+
+            <div class="simulation-result">
+
+                <span>
+                    Current Monthly Burn
+                </span>
+
+                <strong id="simulationCurrentBurn">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="simulation-result">
+
+                <span>
+                    Simulated Monthly Burn
+                </span>
+
+                <strong id="simulationNewBurn">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="simulation-result simulation-savings">
+
+                <span>
+                    Potential Monthly Savings
+                </span>
+
+                <strong id="simulationMonthlySaving">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <div class="simulation-result simulation-savings">
+
+                <span>
+                    Potential Annual Savings
+                </span>
+
+                <strong id="simulationAnnualSaving">
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="simulation-actions">
+
+            <button
+                id="keepSubscriptionButton"
+                class="simulation-secondary-button"
+                type="button"
+            >
+                Keep Subscription
+            </button>
+
+            <button
+                id="cancelSubscriptionButton"
+                class="simulation-danger-button"
+                type="button"
+            >
+                Cancel Subscription
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
 </main>
 
 
@@ -1458,6 +1668,7 @@ SubSentry · Subscription Intelligence & Recurring Spend Audit Platform
 <script src="script.js"></script>
 <script src="report.js"></script>
 <script src="nav-menu.js"></script>
+<script src="action-center.js"></script>
 
 </body>
 </html>
