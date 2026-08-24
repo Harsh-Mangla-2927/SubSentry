@@ -6,6 +6,7 @@
 <meta name="description" content="SubSentry - Subscription Intelligence and Recurring Spend Audit Platform">
 <title>SubSentry — Subscription Intelligence</title>
 <link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
 
@@ -790,28 +791,226 @@ Log in
 
 <header class="dashboard-navbar">
 
-<button id="dashboardBrandHome" class="brand brand-button" type="button">
-<span class="brand-mark">S</span>
-<span>SubSentry</span>
-</button>
+    <button
+        id="dashboardBrandHome"
+        class="dashboard-brand"
+        type="button"
+        aria-label="Go to dashboard"
+    >
+        <span class="brand-mark">S</span>
+        <span class="dashboard-brand-name">
+            SubSentry
+        </span>
+    </button>
 
 
-<div class="dashboard-user">
+    <div class="dashboard-user">
 
-<span id="welcomeUser">
-Welcome
-</span>
+        <span
+            id="welcomeUser"
+            class="welcome-user"
+        >
+            Welcome
+        </span>
 
-<button id="dashboardThemeToggle" class="theme-toggle" type="button">
-<span id="dashboardThemeIcon" class="theme-icon">☀</span>
-<span id="dashboardThemeLabel" class="theme-label">Light</span>
-</button>
 
-<button id="logoutButton" class="logout-button" type="button">
-Log Out
-</button>
+        <div class="dashboard-menu">
 
-</div>
+            <button
+                id="dashboardMenuButton"
+                class="dashboard-menu-button"
+                type="button"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Open account menu"
+            >
+                <span class="menu-icon">
+                    ☰
+                </span>
+
+                <span class="menu-label">
+                    Menu
+                </span>
+
+                <span class="menu-chevron">
+                    ▾
+                </span>
+            </button>
+
+
+            <div
+                id="dashboardMenuDropdown"
+                class="dashboard-menu-dropdown"
+                aria-hidden="true"
+            >
+
+                <div class="menu-user-info">
+
+                    <div class="menu-user-avatar">
+                        <span id="menuUserInitial">
+                            H
+                        </span>
+                    </div>
+
+                    <div class="menu-user-details">
+
+                        <strong id="menuUserName">
+                            User
+                        </strong>
+
+                        <span id="menuUserEmail">
+                            SubSentry account
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="menu-divider"></div>
+
+
+                <div class="menu-section-label">
+                    APPEARANCE
+                </div>
+
+
+                <button
+                    id="dashboardThemeToggle"
+                    class="menu-action"
+                    type="button"
+                >
+
+                    <span class="menu-action-icon">
+                        <span id="dashboardThemeIcon">
+                            ☀
+                        </span>
+                    </span>
+
+                    <span class="menu-action-content">
+
+                        <strong>
+                            <span id="dashboardThemeLabel">
+                                Light
+                            </span>
+                            Mode
+                        </strong>
+
+                        <small>
+                            Switch between light and dark
+                        </small>
+
+                    </span>
+
+                    <span class="menu-action-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <div class="menu-divider"></div>
+
+
+                <div class="menu-section-label">
+                    REPORTS
+                </div>
+
+
+                <button
+                    id="downloadReportButton"
+                    class="menu-action"
+                    type="button"
+                >
+
+                    <span class="menu-action-icon">
+                        ↓
+                    </span>
+
+                    <span class="menu-action-content">
+
+                        <strong>
+                            Download Report
+                        </strong>
+
+                        <small>
+                            Save your spending report as PDF
+                        </small>
+
+                    </span>
+
+                    <span class="menu-action-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="shareReportButton"
+                    class="menu-action"
+                    type="button"
+                >
+
+                    <span class="menu-action-icon">
+                        ↗
+                    </span>
+
+                    <span class="menu-action-content">
+
+                        <strong>
+                            Share Report
+                        </strong>
+
+                        <small>
+                            Share your SubSentry report
+                        </small>
+
+                    </span>
+
+                    <span class="menu-action-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <div class="menu-divider"></div>
+
+
+                <button
+                    id="logoutButton"
+                    class="menu-action logout-menu-action"
+                    type="button"
+                >
+
+                    <span class="menu-action-icon">
+                        ↪
+                    </span>
+
+                    <span class="menu-action-content">
+
+                        <strong>
+                            Log Out
+                        </strong>
+
+                        <small>
+                            Sign out of your workspace
+                        </small>
+
+                    </span>
+
+                    <span class="menu-action-arrow">
+                        ›
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </header>
 
@@ -1256,8 +1455,9 @@ SubSentry · Subscription Intelligence & Recurring Spend Audit Platform
 
 </section>
 
-
 <script src="script.js"></script>
+<script src="report.js"></script>
+<script src="nav-menu.js"></script>
 
 </body>
 </html>
